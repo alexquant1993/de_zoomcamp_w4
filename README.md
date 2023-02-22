@@ -184,7 +184,7 @@ packages:
         vars:
             payment_type_values: [1, 2, 3, 4, 5, 6]
     ```
-    - On the command line: `dbt build --m model_name --var 'is_test_run: false'` and in the code we can use it as `{{ var('is_test_run', default=true) }}`
+    - On the command line: `dbt build --m model_name --var "{'is_test_run': false}"` and in the code we can use it as `{{ var('is_test_run', default=true) }}`
 
 ## Seeds
 - CSV files stored in our repository under the seed folder
@@ -287,7 +287,7 @@ models:
 ## Deployment
 ### What is deployment?
 - Develop -> Test and document -> Deployment (Version control and CI/CD)
-- Process of running the models we created in our development environmnt in a production environment
+- Process of running the models we created in our development environment in a production environment
 - Development and later deployment allows us to continue building models and testing them without affecting our production environment
 - A deployment environment will normally have a different schema in our data warehouse and ideally a different user
 - A development - deployment workflow will be something like:

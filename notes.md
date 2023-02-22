@@ -73,3 +73,27 @@ Latest developments in the data domain:
     - Integrated documentation.
     - Free for individuals.
 
+## How to setup the deployment of dbt?
+### Production environment
+
+- Environment: a set of configurations that define how dbt should interact with your data warehouse.
+- Choose deployment in the UI and then environment.
+- Create a new environment and select the production dataset.
+
+### Create jobs
+
+- Jobs: a set of commands that dbt will run in a specific order.
+- Create a new job and select the production environment.
+    - Threads: number of threads to use when running the job. 4 is default.
+    - Target name: default = it will be use the schema I define.
+- Execution settings:
+    - Generate docs on run
+    - List commands
+    - Run timeout
+    - Run source freshness
+- Triggers:
+    - Schedule: run the job at a specific time.
+    - CI: run on pull request.
+- Save and run the job. You will see the logs and the created docs.
+- Add the documentation into the project given a job. Edit project and select job. Then you will be able to see a documentation tab.
+
